@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+	  "target": "es6",  // Actualiza el target a ES6 o superior
+	  "module": "commonjs",
+	  "outDir": "./dist",
+	  "strict": true,
+	  "lib": ["es2015", "dom"]  // Incluye ES2015 para tener promesas y async/await
+	},
+	"include": ["./app.ts"]
+  }
+  
