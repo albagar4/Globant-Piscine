@@ -2,8 +2,6 @@ const searchInput = document.getElementById('searchInput') as HTMLInputElement;
 const searchButton = document.getElementById('searchButton') as HTMLButtonElement;
 const resultsDiv = document.getElementById('results') as HTMLDivElement;
 
-console.log("miau");
-
 searchButton.addEventListener('click', () => {
     const query = searchInput.value.trim(); // Obtiene el valor del input
     if (query) { // Solo busca si hay un término introducido
