@@ -1,0 +1,17 @@
+PLAYGROUNDS
+- La extensión de MongoDB en VS Code interpreta los archivos .mongodb.js como playgrounds 
+
+
+INFORMACIÓN SOBRE GET Y POST
+- GET para la configuración de páginas web (filtros, ordenación, búsquedas, etc.)
+- POST para la transferencia de información y datos
+
+MONGODB Y NODEJS
+1. Carpeta config con archivo db.js
+2. Hay que añadir un conector a base de datos. El señor usa mongoose (npm install mongoose --save)
+3. Una vez se instala tenemos el respectivo node_modules, package.json y package-lock.json
+4. En el .js escribimos: const mongoose = require('mongoose')
+5. Tenemos que darle un punto de entrada a la base de datos. MongoDB genera unas claves uri/url que permiten bien la comunicación
+6. Creamos una constante DB_URI y añadimos la url ahí
+7. Se va a llamar a este archivo desde otros archivos así que hay que exportar el módulo
+8. Tenemos unna función para configurar ¿la base de datos? y otra de error, por si algo no funciona como debiera
