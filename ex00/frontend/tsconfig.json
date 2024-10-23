@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+		"lib": [
+			"es6",
+			"DOM"
+		],
+		"rootDir": "./ts/",
+		"outFile": "./js/main.js",
+		"removeComments": true,
+	}
+}
