@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import styles from "./CameraComponent.module.css";
 
-const CameraComponent = () => {
+const CameraComponent = ({ onCapture }) => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const [imageData, setImageData] = useState(null);
@@ -39,6 +39,7 @@ const CameraComponent = () => {
     }
   };
   const capturePhoto = () => {
+    if (!isCameraActive) return;
     const context = canvasRef.current.getContext("2d");
     canvasRef.current.width = videoRef.current.videoWidth;
     canvasRef.current.height = videoRef.current.videoHeight;
@@ -52,43 +53,20 @@ const CameraComponent = () => {
 
     const image = canvasRef.current.toDataURL("image/png"); // Guardar la imagen en base64
     setImageData(image);
-  };
-  // Función para subir la foto capturada al backend
-  const handleSubmit = async () => {
-    if (imageData) {
-      try {
-        const response = await fetch("/api/upload", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ image: imageData }),
-        });
-        const result = await response.json();
-        console.log("Successfuly uploaded photo", result);
-      } catch (error) {
-        console.error("Error trying to upload photo", error);
-      }
-    }
+    if (onCapture) onCapture(image);
   };
   return (
     <div className={styles.container}>
       <div className={styles.buttonContainer}>
-        <button className={styles.button} onClick={toggleCamera}>
+        <button type="button" className={styles.button} onClick={toggleCamera}>
           {isCameraActive ? "Stop Camera" : "Activate Camera"}
         </button>
-        <button className={styles.button} onClick={capturePhoto}>
+        <button type="button" className={styles.button} onClick={capturePhoto}>
           Take photo
-        </button>
-        <button className={styles.button} onClick={handleSubmit}>
-          Upload photo
         </button>
       </div>
 
       <canvas ref={canvasRef} style={{ display: "none" }}></canvas>
-      {imageData && (
-        <img src={imageData} alt="captured" className={styles.capturedImage} />
-      )}
       <video ref={videoRef} className={styles.video}></video>
     </div>
   );

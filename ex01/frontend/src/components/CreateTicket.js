@@ -3,7 +3,7 @@ import styles from "./CreateTicket.module.css";
 import CameraComponent from "./CameraComponent";
 
 const CreateTicket = () => {
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState(null); // Store both file or captured image
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -18,42 +18,49 @@ const CreateTicket = () => {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setImage(reader.result);
+        setImage(reader.result); // Set the uploaded file image
       };
       reader.readAsDataURL(file);
     }
   };
+
+  // Capture photo from CameraComponent and store it as an image
+  const handleCaptureFromCamera = (capturedImage) => {
+    setImage(capturedImage); // Set the captured image
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const ticketData = {
-      title,
-      description,
-      image,
-    };
 
+    // Example POST request (replace with your API endpoint)
     try {
       const response = await fetch("http://localhost:5000/tickets", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ title: title, description: description, image: image }),
+        body: JSON.stringify({
+          title: title,
+          description: description,
+          image: image,
+        }),
       });
       const result = await response.json();
-      console.log("Successfuly uploaded photo", result);
-    } catch (error) {
-      console.error("Error trying to upload photo", error);
-    }
+      console.log("Ticket Submitted:", result);
 
-    console.log("Ticket Submitted:", ticketData);
-    setTitle("");
-    setDescription("");
-    setImage(null);
-    setIsOpen(false);
-    if (fileInputRef.current) {
-      fileInputRef.current.value = "";
+      // Reset form after submission
+      setTitle("");
+      setDescription("");
+      setImage(null);
+      setIsOpen(false);
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+    } catch (error) {
+      console.error("Error submitting ticket:", error);
     }
   };
+
   return (
     <div className={styles.createTicketContainer}>
       <button onClick={handleToggle} className={styles.menuButton}>
@@ -101,7 +108,8 @@ const CreateTicket = () => {
               <img src={image} alt="Preview" className={styles.previewImage} />
             </div>
           )}
-          <CameraComponent />
+          {/* Capture photo via CameraComponent */}
+          <CameraComponent onCapture={handleCaptureFromCamera} />
           <button type="submit" className={styles.submitButton}>
             Submit Ticket
           </button>
