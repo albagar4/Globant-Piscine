@@ -1,0 +1,48 @@
+.container {
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  margin: 20px auto; /* Add some margin */
+  border: 2px solid #007bff; /* Blue border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding around content */
+  background-color: #f9f9f9; /* Light background color */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+.video {
+  width: 100%; /* Full width */
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 10px; /* Space below the video */
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.button {
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 15px; /* Padding for button */
+  margin: 5px; /* Margin around buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Increase font size */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.capturedImage {
+  margin: 10px 0; /* Space above and below image */
+  border: 2px solid #007bff; /* Border around the image */
+  border-radius: 8px; /* Rounded corners */
+  max-width: 100%; /* Responsive */
+}

@@ -1,0 +1,28 @@
+/* TicketList.module.css */
+.ticketList {
+  margin: 20px auto;
+  max-width: 480px;
+  padding-right: 40px;
+}
+
+.ticketItem {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.ticketItem h3 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.ticketItem p {
+  margin: 5px 0;
+}
+
+.ticketItem img {
+  max-width: 10%;
+  height: auto;
+  border-radius: 5px;
+}

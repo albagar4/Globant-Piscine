@@ -1,0 +1,39 @@
+/* src/components/ImageUploader.module.css */
+
+.uploaderContainer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.uploadInput {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.previewContainer {
+  margin-top: 20px;
+}
+
+.previewImage {
+  min-width: 400px;
+  width: 60%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.removeButton {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.removeButton:hover {
+  background-color: #c0392b;
+}

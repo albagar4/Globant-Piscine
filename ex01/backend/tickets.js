@@ -15,6 +15,4 @@ const ticketsSchema = new mongoose.Schema({
 	}
 });
 
-export default {
-	ticketsSchema
-};
+export default ticketsSchema;

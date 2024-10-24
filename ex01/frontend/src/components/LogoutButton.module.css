@@ -1,0 +1,20 @@
+.buttonContainer {
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center horizontally */
+  margin: 20px; /* Add some spacing if needed */
+}
+
+.logoutButton {
+  background-color: #ff4d4d; /* Red background */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding for spacing */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer on hover */
+  font-size: 16px; /* Increase font size */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.logoutButton:hover {
+  background-color: #e60000; /* Darker red on hover */
+}
