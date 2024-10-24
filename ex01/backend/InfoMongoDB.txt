@@ -6,15 +6,6 @@ INFORMACIÓN SOBRE GET Y POST
 - GET para la configuración de páginas web (filtros, ordenación, búsquedas, etc.)
 - POST para la transferencia de información y datos
 
-MONGODB Y NODEJS
-1. Carpeta config con archivo db.js
-2. Hay que añadir un conector a base de datos. El señor usa mongoose (npm install mongoose --save)
-3. Una vez se instala tenemos el respectivo node_modules, package.json y package-lock.json
-4. En el .js escribimos: const mongoose = require('mongoose')
-5. Tenemos que darle un punto de entrada a la base de datos. MongoDB genera unas claves uri/url que permiten bien la comunicación
-6. Creamos una constante DB_URI y añadimos la url ahí
-7. Se va a llamar a este archivo desde otros archivos así que hay que exportar el módulo
-8. Tenemos unna función para configurar ¿la base de datos? y otra de error, por si algo no funciona como debiera
 
 MONGODB Y NODEJS
 - En MongoDB trabajas con ODM (Object-Document Mapping) en lugar de con ORM, porque está especializado en bases de datos NoSQL (sin columnas)
@@ -34,4 +25,4 @@ MONGODB Y NODEJS
 	GET/tickets (obtención de todos los tickets) y POST/tickets (creación de un ticket nuevo)ç
 	Hay un método aggregate por si tienes varios modelos con una relación entre sí
 	Al levantar el servidor y realizar la conexión con Mongoose, automáticamente se crearán las colecciones en nuestra base de datos.
-	
+	Por último, hace uso de mongoose.connect con la url. Si se conecta bien lanza el servidor, sino devuelve un error
