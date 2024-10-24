@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import ticketsModel from "models.js";
+import ticketsModel from "./models.js";
 // import axios from 'axios';
 
 dotenv.config();

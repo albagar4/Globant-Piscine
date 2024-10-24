@@ -1,8 +1,8 @@
 import mongoose from 'mongoose'
-const { ticketsSchema } = require('./tickets');
+import ticketsSchema from "./tickets.js";
 
 const ticketsModel = mongoose.model('Tickets', ticketsSchema);
 
-module.exports = {
+export default {
 	ticketsModel
 };

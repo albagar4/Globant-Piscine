@@ -10,11 +10,11 @@ const ticketsSchema = new mongoose.Schema({
 		required: true
 	},
 	image: {
-		type: Image,
+		type: String,
 		required: true
 	}
 });
 
-module.exports = {
+export default {
 	ticketsSchema
 };
