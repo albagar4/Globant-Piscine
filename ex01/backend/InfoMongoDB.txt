@@ -15,3 +15,23 @@ MONGODB Y NODEJS
 6. Creamos una constante DB_URI y añadimos la url ahí
 7. Se va a llamar a este archivo desde otros archivos así que hay que exportar el módulo
 8. Tenemos unna función para configurar ¿la base de datos? y otra de error, por si algo no funciona como debiera
+
+MONGODB Y NODEJS
+- En MongoDB trabajas con ODM (Object-Document Mapping) en lugar de con ORM, porque está especializado en bases de datos NoSQL (sin columnas)
+- Mongoose: Biblioteca ODM de JavaScript, facilita diversas características de trabajar con Nodejs y proporciona una capa de abstracción en las interacciones con MongoDB
+- Mongoose podría definirse como el intermediario entre node y el driver de mongodb
+- Primero hacemos un servidor muy sencillo con un app.get que enseña un mensaje y un app.listen
+- Schema: Define la estructura y las restricciones de los datos que se almacenarán.
+	También define los campos que deben estar presentes en cada documento y especifica los tipos de datos.
+	Proporciona una estructura predefinida para los documentos de una colección.
+- Modelo: Clase construida a partir de un esquema.
+	Se utiliza para realizar operaciones de consulta, inserción, actualización y eliminación en la base de datos.
+	Permiten interactuar con los datos utilizando una interfaz orientada a objetos.
+- Creamos un fichero llamado tickets.js en la raíz del repo para implementar su schema.
+	Es como una estructura en la que he definido un titulo, descripcion y una imagen. Cada atributo tiene un tipo definido y si es requerido.
+- Después de crear el schema tenemos que crear el modelo. Archivo models.js. Utilizamos el .model y le damo lo que, creo que es un titulo, y el esquem del que proviene.
+- Implementamos nuestras rutas y conexion a mongoDB. Para ello implementación 2 endpoints referentes:
+	GET/tickets (obtención de todos los tickets) y POST/tickets (creación de un ticket nuevo)ç
+	Hay un método aggregate por si tienes varios modelos con una relación entre sí
+	Al levantar el servidor y realizar la conexión con Mongoose, automáticamente se crearán las colecciones en nuestra base de datos.
+	

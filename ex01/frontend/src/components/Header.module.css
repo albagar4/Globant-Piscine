@@ -1,0 +1,15 @@
+/* src/components/Header.module.css */
+.headerContainer {
+  text-align: center;
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.headerTitle {
+  font-family: Roboto;
+  font-size: 5rem;
+  color: #333;
+  font-weight: bold;
+}
