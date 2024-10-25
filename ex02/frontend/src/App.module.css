@@ -5,6 +5,7 @@
   justify-content: center;
   height: 100vh; /* Centering the container */
   background-color: #f3f4f6;
+  padding: 20px;
 }
 
 .form {
@@ -15,6 +16,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
+  margin-top: 20px;
 }
 
 .button {
@@ -36,21 +38,6 @@
 }
 
 /* App.module.css */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
-
-.form {
-  margin-top: 20px;
-}
-
-.button {
-  margin-top: 10px;
-}
-
 /* Ensure the map container has a defined height */
 .leaflet-container {
   height: 400px; /* or any height you want */

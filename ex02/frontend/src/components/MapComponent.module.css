@@ -1,8 +1,8 @@
 /* MapComponent.module.css */
 
 .mapContainer {
-  height: 60%; /* Fixed height for the map */
-  width: 80%; /* Full width */
+  height: 500px; /* Fixed height for the map */
+  width: 500px; /* Full width */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   margin-top: 20px; /* Space above the map */
