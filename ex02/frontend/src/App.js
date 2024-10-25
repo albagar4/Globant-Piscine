@@ -7,13 +7,21 @@ const App = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      console.log("inputValue", inputValue);
       const response = await fetch(
-        `http://localhost:5000/get_travel_info?query={inputValue}`,
+        `http://localhost:5000/get_travel_info?query=${inputValue}`, {
+          method: 'GET',
+        }
       );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
       const data = await response.json();
       console.log("API Response:", data);
     } catch (e) {
-      console.error("Unable to send POST request", e);
+      console.error("Unable to send GET request", e);
     }
   };
 
