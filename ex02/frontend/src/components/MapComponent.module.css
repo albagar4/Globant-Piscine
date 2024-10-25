@@ -1,0 +1,13 @@
+/* MapComponent.module.css */
+
+.mapContainer {
+  height: 60%; /* Fixed height for the map */
+  width: 80%; /* Full width */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-top: 20px; /* Space above the map */
+}
+
+.markerPopup {
+  font-size: 14px; /* Font size for the popup */
+}

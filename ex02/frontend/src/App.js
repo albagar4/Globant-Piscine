@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import InputField from "./components/InputField";
 import MapComponent from "./components/MapComponent";
 import styles from "./App.module.css";
+import "leaflet/dist/leaflet.css";
 
 const App = () => {
   const [inputValue, setInputValue] = useState("");

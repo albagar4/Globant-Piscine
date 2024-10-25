@@ -1,18 +1,24 @@
+/* InputField.module.css */
+
 .textarea {
-  width: 500px; /* Fixed width for the input field */
-  max-width: 100%; /* Ensures it remains responsive */
-  min-height: 40px;
-  padding: 12px 16px;
-  font-size: 16px;
-  line-height: 1.5;
-  border-radius: 4px;
-  border: 1px solid #d1d5db;
-  resize: none;
-  overflow: hidden;
-  transition: border-color 0.3s ease;
+  width: 320px; /* Set a fixed width for the input */
+  height: auto; /* Allow the height to grow dynamically */
+  min-height: 40px; /* Set a minimum height */
+  max-height: 200px; /* Set a maximum height */
+  padding: 1px; /* Add some padding */
+  font-size: 16px; /* Set font size */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  resize: none; /* Prevent resizing */
+  overflow-y: auto; /* Show scrollbar when needed */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  text-align: center; /* Center text horizontally */
 }
 
-.textarea:focus {
-  border-color: #3b82f6;
-  outline: none;
+/* Optional: Style for the placeholder text */
+.textarea::placeholder {
+  color: #aaa; /* Light gray color for placeholder text */
 }

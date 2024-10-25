@@ -1,9 +1,9 @@
-import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
+import React, { useEffect } from "react";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
+import styles from "./MapComponent.module.css"; // Import the styles
 
-// Fix marker icon
+// Set up default icon for markers
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
@@ -12,21 +12,30 @@ L.Icon.Default.mergeOptions({
 });
 
 const MapComponent = ({ coordinates }) => {
-  const position = [coordinates.lat, coordinates.lng]; // Use passed coordinates
+  const { lat, lng } = coordinates;
+
+  const ChangeView = ({ coords }) => {
+    const map = useMap();
+    useEffect(() => {
+      map.setView(coords, map.getZoom());
+    }, [coords, map]);
+    return null;
+  };
 
   return (
-    <MapContainer
-      center={position}
-      zoom={13}
-      style={{ height: "400px", width: "100%" }}
-    >
+    <MapContainer center={[lat, lng]} zoom={13} className={styles.mapContainer}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      <Marker position={position}>
-        <Popup>Your location</Popup>
+      <Marker position={[lat, lng]}>
+        <Popup className={styles.markerPopup}>
+          {" "}
+          {/* Use the popup class for styling */}
+          Location: {lat}, {lng}
+        </Popup>
       </Marker>
+      <ChangeView coords={[lat, lng]} />
     </MapContainer>
   );
 };

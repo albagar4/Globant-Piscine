@@ -18,7 +18,8 @@ const InputField = ({
     }
   };
   return (
-    <textarea
+    <input
+      type="text"
       ref={textareaRef}
       placeholder={placeholder}
       value={value}
