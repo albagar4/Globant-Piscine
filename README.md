@@ -3,7 +3,7 @@
 Proyectos realizados para el metapiloto de la piscina pedagógica de FullStack, proporcionados por Globant.
 En este repositorio encontrarás 3 carpetas asociadas a cada proyecto, siendo:
 
-## - ex00: Image Gallery. 
+## ex00: Image Gallery
 Proyecto individual, sin uso de FrameWorks.
 
 En él, hemos utilizado y aprendido a hacer un frontend básico, utilizando __HTML, CSS y TypeScript__.
@@ -11,7 +11,7 @@ En él, hemos utilizado y aprendido a hacer un frontend básico, utilizando __HT
 Introduces una palabra clave y, desde el backend, realizado con __Node.js y Express__, realizas una petición a una API pública de Unsplash y enseñas por pantalla las fotos asociadas a esa palabra.
 
 
-## - ex01: ServiceDeskai
+## ex01: ServiceDeskai
 Proyecto en grupo, en este caso realizado en pareja.
 
 El propósito de este es crear una aplicación web responsiva con la misma funcionalidad que Google Lens.
@@ -21,7 +21,7 @@ En este repositorio encontramos un frontend, realizado con __React y Redux__, qu
 Esta información es enviada al backend, desarrollado con __Node.js y Express__ y conectado con una base de datos de __MongoDB__, donde hemos conseguido que se alojen correctamente los datos.
 
 
-## - ex02: TripRecommendator
+## ex02: TripRecommendator
 Proyecto en grupo, también realizado en pareja.
 
 Centralizado en desarrollo de frontend, a partir de __React, HTML y CSS__ se ha realizado una aplicación web interactiva que tiene como propósito recomendarte actividades que hacer en los lugares que introduzcas por pantalla.
