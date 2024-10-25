@@ -1,0 +1,18 @@
+.textarea {
+  width: 500px; /* Fixed width for the input field */
+  max-width: 100%; /* Ensures it remains responsive */
+  min-height: 40px;
+  padding: 12px 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  resize: none;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
